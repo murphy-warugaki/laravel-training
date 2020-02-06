@@ -91,7 +91,7 @@ class TestCacheLRU extends TestCase
 	$this->assertEquals($result, 222); // 一番最新のvalueは222のはず
 
 	$result = $cache->get('hoge');
-	$cache->assertNull($result); // 古いものは値がnullになる
+	$this->assertNull($result); // 古いものは値がnullになる
   }
 
 }
