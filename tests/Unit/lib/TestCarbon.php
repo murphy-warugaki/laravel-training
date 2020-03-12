@@ -32,4 +32,11 @@ class TestCarbon extends TestCase
 	$this->assertFalse($result);
   }
 
+  public function testGet()
+  {
+$today = Carbon::today();
+var_dump($today->month);
+	$this->assertFalse(false);
+  }
+
 }
