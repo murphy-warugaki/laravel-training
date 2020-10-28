@@ -5,10 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Pet;
 
-class SampleController extends Controller
-{
-    public function index()
-    {
+class SampleController extends Controller{
+    public function index(){
         $fruit_list = [
             [
                 "name" => "apple",
@@ -64,15 +62,13 @@ class SampleController extends Controller
 
     }
 
-    public function delete()
-    {
+    public function delete(){
         Pet::orderBy('id', 'asc')->first()->delete();
 
         return "データを削除しました";
     }
 
-    public function update()
-    {
+    public function update(){
         Pet::orderBy('id', 'asc')->first()->update(['name' => "jonny"]);
 
         return "データを更新しました";

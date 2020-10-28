@@ -26,3 +26,5 @@ Route::get("/insert", "SampleController@insert");
 Route::get("/delete", "SampleController@delete");
 
 Route::get("/update", "SampleController@update");
+
+Route::get('/form/index', 'SampleFormController@index');
