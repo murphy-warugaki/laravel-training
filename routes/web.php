@@ -16,3 +16,10 @@ Route::get('/', function () {
 });
 
 Route::get("sample", "SampleController@index");
+
+Route::get("/select", "SampleController@select");
+
+Route::get("/select_many", "SampleController@selectMany");
+
+
+Route::get("/insert", "SampleController@insert");

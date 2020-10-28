@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pet;
 
 class SampleController extends Controller
 {
@@ -32,5 +33,34 @@ class SampleController extends Controller
             "fruit_list" => $fruit_list,
             "total" => $total
         ]);
+    }
+
+    public function select(){
+        $pochi = Pet::find(1);
+        return view("select",[
+            "pochi" => $pochi
+        ]);
+    }
+
+
+    public function selectMany(){
+        $pets = Pet::orderBy('id', 'asc')->get();
+
+        return view('select_many', [
+            "pets" => $pets
+        ]);
+    }
+
+    public function insert(){
+        $pet = new Pet();
+
+        $pet->name = "peace";
+        $pet->birthday = "1980/09/09";
+        $pet->gender = "male";
+
+        $pet->save();
+
+        return "データを挿入しました。";
+
     }
 }
