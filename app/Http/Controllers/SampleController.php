@@ -63,4 +63,11 @@ class SampleController extends Controller
         return "データを挿入しました。";
 
     }
+
+    public function delete()
+    {
+        Pet::orderBy('id', 'asc')->first()->delete();
+
+        return "データを削除しました";
+    }
 }
