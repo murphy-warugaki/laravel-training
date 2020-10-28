@@ -24,3 +24,5 @@ Route::get("/select_many", "SampleController@selectMany");
 Route::get("/insert", "SampleController@insert");
 
 Route::get("/delete", "SampleController@delete");
+
+Route::get("/update", "SampleController@update");

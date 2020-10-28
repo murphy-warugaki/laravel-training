@@ -70,4 +70,11 @@ class SampleController extends Controller
 
         return "データを削除しました";
     }
+
+    public function update()
+    {
+        Pet::orderBy('id', 'asc')->first()->update(['name' => "jonny"]);
+
+        return "データを更新しました";
+    }
 }
