@@ -41,4 +41,14 @@ class SampleFormController extends Controller
 
         return redirect('/form/index');
     }
+
+    public function update(Request $request){
+        Pet::find($request->pet_id)
+        ->update([
+            "name" => $request->name,
+            "birthday" => $request->birthday,
+            "gender" => $request->gender
+        ]);
+        return redirect("/form/index");
+    }
 }

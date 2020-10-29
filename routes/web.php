@@ -34,3 +34,5 @@ Route::get("/form/show/{id}", "SampleFormController@show");
 Route::post("/form/store", "SampleFormController@store");
 
 Route::post('/form/delete', 'SampleFormController@delete');
+
+Route::post("/form/update", "SampleFormController@update");
