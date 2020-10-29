@@ -10,16 +10,12 @@ class SampleFormController extends Controller
     public function index(){
         $pets = Pet::orderBy('id', 'asc')->get();
 
-        return view('sample_form', [
-            "pets" => $pets
-        ]);
+        return view('sample_form', compact("pets"));
     }
 
     public function show($id){
         $pet = Pet::find($id);
-        return view("sample_show",[
-            "pet" => $pet
-        ]);
+        return view("sample_show", compact("pet"));
     }
 
     public function store(Request $request){
