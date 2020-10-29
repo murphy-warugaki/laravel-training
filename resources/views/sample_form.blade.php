@@ -1,10 +1,11 @@
 <h2>Pet List</h2>
-<form method="POST" action="">
+<form method="POST" action="/form/delete">
     @csrf
     <input type="submit" name="delete" value="削除">
 
     <table border="1">
         <tr>
+            <th>ID</th>
             <th>名前</th>
             <th>生年月日</th>
             <th>性別</th>
@@ -16,13 +17,13 @@
             <td>{{$pet->name}}</td>
             <td>{{$pet->birthday}}</td>
             <td>{{$pet->gender}}</td>
-            <td><input type="checkbox" name="delete_pets[]" value=""></td>
+            <td><input type="checkbox" name="delete_pets[]" value="{{$pet->id}}"></td>
         </tr>
         @endforeach
     </table>
 </form>
 
-<form method="POST" action="">
+<form method="POST" action="/form/store">
     @csrf
     <p>データの追加</p>
     <input type="text" name="pet">

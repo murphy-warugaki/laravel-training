@@ -21,4 +21,24 @@ class SampleFormController extends Controller
             "pet" => $pet
         ]);
     }
+
+    public function store(Request $request){
+        $pet = new Pet();
+
+        $pet->name = $request->pet;
+        $pet->birthday = "1980/01/01";
+        $pet->gender = "not set";
+
+        $pet->save();
+
+        return redirect("/form/index");
+    }
+
+    public function delete(Request $request){
+        foreach($request->delete_pets as $pet_id) {
+            Pet::find($pet_id)->delete();
+        }
+
+        return redirect('/form/index');
+    }
 }
