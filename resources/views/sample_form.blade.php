@@ -12,6 +12,7 @@
         </tr>
         @foreach($pets as $pet)
         <tr>
+            <td><a href="/form/show/{{$pet->id}}">{{$pet->id}}</a></td>
             <td>{{$pet->name}}</td>
             <td>{{$pet->birthday}}</td>
             <td>{{$pet->gender}}</td>

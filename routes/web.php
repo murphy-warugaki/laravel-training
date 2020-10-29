@@ -27,4 +27,6 @@ Route::get("/delete", "SampleController@delete");
 
 Route::get("/update", "SampleController@update");
 
-Route::get('/form/index', 'SampleFormController@index');
+Route::get("/form/index", "SampleFormController@index");
+
+Route::get("/form/show/{id}", "SampleFormController@show");

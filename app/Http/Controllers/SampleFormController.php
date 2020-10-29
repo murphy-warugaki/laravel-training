@@ -14,4 +14,11 @@ class SampleFormController extends Controller
             "pets" => $pets
         ]);
     }
+
+    public function show($id){
+        $pet = Pet::find($id);
+        return view("sample_show",[
+            "pet" => $pet
+        ]);
+    }
 }
