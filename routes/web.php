@@ -14,3 +14,25 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get("sample", "SampleController@index");
+
+Route::get("/select", "SampleController@select");
+
+Route::get("/select_many", "SampleController@selectMany");
+
+Route::get("/insert", "SampleController@insert");
+
+Route::get("/delete", "SampleController@delete");
+
+Route::get("/update", "SampleController@update");
+
+Route::get("/form/index", "SampleFormController@index");
+
+Route::get("/form/show/{id}", "SampleFormController@show");
+
+Route::post("/form/store", "SampleFormController@store");
+
+Route::post('/form/delete', 'SampleFormController@delete');
+
+Route::post("/form/update", "SampleFormController@update");
