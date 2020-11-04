@@ -19,15 +19,21 @@ class SampleFormController extends Controller
     }
 
     public function store(Request $request){
-        $pet = new Pet();
 
-        $pet->name = $request->pet;
-        $pet->birthday = "1980/01/01";
-        $pet->gender = "not set";
+        DB::beginTransaction();
+        try {
+            $pet = new Pet();
 
-        $pet->save();
+            $pet->name = $request->pet;
+            $pet->birthday = "1980/01/01";
+            $pet->gender = "not set";
 
-        return redirect("/form/index");
+            $pet->save();
+
+            return redirect("/form/index");
+        } catch (\Exception $e) {
+            DB::rollback();
+        }
     }
 
     public function delete(Request $request){
