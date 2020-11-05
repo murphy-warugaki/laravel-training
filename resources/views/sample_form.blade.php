@@ -1,4 +1,7 @@
-<h2>Pet List</h2>
+@extends("layout.master")
+
+@section("text", "継承テスト")
+
 <form method="POST" action="/form/delete">
     @csrf
     <input type="submit" name="delete" value="削除">
