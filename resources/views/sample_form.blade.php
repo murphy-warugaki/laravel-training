@@ -2,6 +2,11 @@
 
 @section("text", "継承テスト")
 
+@section("content")
+  <p>endsection練習</p>
+@endsection
+
+
 <form method="POST" action="/form/delete">
     @csrf
     <input type="submit" name="delete" value="削除">
